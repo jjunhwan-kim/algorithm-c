@@ -2,6 +2,7 @@
 #include "mydata.h"
 #include "common.h"
 #include "heap.h"
+#include "mergesort.h"
 
 int main()
 {
@@ -38,5 +39,52 @@ int main()
 
     printf("==================================================\n");
 
+    MyData asc[10] = {
+            {5},
+            {1},
+            {4},
+            {6},
+            {7},
+            {9},
+            {2},
+            {10},
+            {3},
+            {8}};
+
+    MyData desc[10] = {
+            {5},
+            {1},
+            {4},
+            {6},
+            {7},
+            {9},
+            {2},
+            {10},
+            {3},
+            {8}};
+
+
+    printf("Merge Sort Asc\n");
+
+    mergeSort(asc, comparePriorityAsc, 0, 9);
+
+    for (int i = 0; i < 10; i++)
+    {
+        printf("%d\n", asc[i].priority);
+    }
+
+    printf("==================================================\n");
+    
+    printf("Merge Sort Desc\n");
+
+    mergeSort(desc, comparePriorityDesc, 0, 9);
+
+    for (int i = 0; i < 10; i++)
+    {
+        printf("%d\n", desc[i].priority);
+    }
+
+    printf("==================================================\n");
+    
     return 0;
 }
