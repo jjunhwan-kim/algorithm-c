@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 #include "common.h"
+#include "countingsort.h"
 #include "heap.h"
 #include "mergesort.h"
 #include "mydata.h"
@@ -65,6 +66,18 @@ int main() {
   }
 
   printf("==================================================\n");
+
+  MyData count[10] = {
+      {3}, {3}, {2},  {2}, {1}, {4},
+      {5}, {7}, {10}, {8}};  // 3 3 2 2 1 4 5 7 10 8 -> 1 2 2 3 3 4 5 7 8 10
+
+  printf("Counting Sort\n");
+
+  countingSort(count, 10);
+
+  for (int i = 0; i < 10; i++) {
+    printf("%d\n", count[i].priority);
+  }
 
   return 0;
 }
