@@ -6,6 +6,7 @@
 #include "mergesort.h"
 #include "mydata.h"
 #include "radixsort.h"
+#include "unionfind.h"
 
 int main() {
   printf("Hello World!\n");
@@ -109,6 +110,28 @@ int main() {
   }
 
   printf("==================================================\n");
+
+  printf("Union Find\n");
+
+  initParent();
+
+  unionParent(1, 2);
+  unionParent(1, 3);
+  unionParent(2, 4);
+  unionParent(4, 5);
+  unionParent(6, 7);
+  unionParent(6, 8);
+  unionParent(7, 9);
+
+  printf("parent[1]: %d\n", findParent(1));
+  printf("parent[2]: %d\n", findParent(2));
+  printf("parent[3]: %d\n", findParent(3));
+  printf("parent[4]: %d\n", findParent(4));
+  printf("parent[5]: %d\n", findParent(5));
+  printf("parent[6]: %d\n", findParent(6));
+  printf("parent[7]: %d\n", findParent(7));
+  printf("parent[8]: %d\n", findParent(8));
+  printf("parent[9]: %d\n", findParent(9));
 
   return 0;
 }
