@@ -5,6 +5,7 @@
 #include "heap.h"
 #include "mergesort.h"
 #include "mydata.h"
+#include "radixsort.h"
 
 int main() {
   printf("Hello World!\n");
@@ -78,6 +79,36 @@ int main() {
   for (int i = 0; i < 10; i++) {
     printf("%d\n", count[i].priority);
   }
+
+  printf("==================================================\n");
+
+  MyData count2[10] = {
+      {3}, {3}, {2},  {2}, {1}, {4},
+      {5}, {7}, {10}, {8}};  // 3 3 2 2 1 4 5 7 10 8 -> 1 2 2 3 3 4 5 7 8 10
+
+  printf("Radix Sort By Decimal Asc\n");
+
+  radixSortBydecimal(count2, 10);
+
+  for (int i = 0; i < 10; i++) {
+    printf("%d\n", count2[i].priority);
+  }
+
+  printf("==================================================\n");
+
+  MyData count3[10] = {
+      {3}, {3}, {2},  {2}, {1}, {4},
+      {5}, {7}, {10}, {8}};  // 3 3 2 2 1 4 5 7 10 8 -> 1 2 2 3 3 4 5 7 8 10
+
+  printf("Radix Sort By 256 Asc\n");
+
+  radixSortBydecimal(count3, 10);
+
+  for (int i = 0; i < 10; i++) {
+    printf("%d\n", count3[i].priority);
+  }
+
+  printf("==================================================\n");
 
   return 0;
 }

@@ -1,6 +1,6 @@
 #include "mergesort.h"
 
-MyData temp[MERGE_SORT_SIZE];
+static MyData temp[MERGE_SORT_SIZE];
 
 void merge(MyData arr[MERGE_SORT_SIZE], int (*compare)(MyData*, MyData*),
            int startIndex, int endIndex);

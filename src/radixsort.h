@@ -1,0 +1,12 @@
+#ifndef RADIX_SORT_H
+#define RADIX_SORT_H
+#include "mydata.h"
+
+#define RADIX_SORT_SIZE 10000  // 데이터 개수
+#define RADIX_SORT_DIGIT 4     // 데이터 자리수
+
+#define RADIX_SORT_BASE (1 << 8)               // 256
+#define RADIX_SORT_MASK (RADIX_SORT_BASE - 1)  // 255
+
+void radixSortBydecimal(MyData* arr, int size);
+#endif

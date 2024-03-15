@@ -1,7 +1,7 @@
 #include "countingsort.h"
 
-int count[COUNTING_SORT_MAX_VALUE + 1];
-MyData sorted[COUNTING_SORT_SIZE];
+static int count[COUNTING_SORT_MAX_VALUE + 1];
+static MyData sorted[COUNTING_SORT_SIZE];
 
 void countingSort(MyData* arr, int size) {
   for (int index = 0; index < size; index++) {
