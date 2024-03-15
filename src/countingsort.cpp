@@ -1,25 +1,22 @@
 #include "countingsort.h"
 
-int count[MAX_VALUE + 1];
-int countSum[MAX_VALUE + 1];
-MyData sortedArr[MAX_SIZE];
+int count[COUNTING_SORT_MAX_VALUE + 1];
+MyData sorted[COUNTING_SORT_SIZE];
 
 void countingSort(MyData* arr, int size) {
   for (int index = 0; index < size; index++) {
     count[arr[index].priority]++;
   }
 
-  countSum[0] = count[0];
-  for (int index = 1; index <= MAX_VALUE; index++) {
-    countSum[index] = countSum[index - 1] + count[index];
+  for (int index = 1; index <= COUNTING_SORT_MAX_VALUE; index++) {
+    count[index] = count[index - 1] + count[index];
   }
 
   for (int index = size - 1; index >= 0; index--) {
-    sortedArr[countSum[arr[index].priority] - 1] = arr[index];
-    countSum[arr[index].priority]--;
+    sorted[--count[arr[index].priority]] = arr[index];
   }
 
   for (int index = 0; index < size; index++) {
-    arr[index] = sortedArr[index];
+    arr[index] = sorted[index];
   }
 }

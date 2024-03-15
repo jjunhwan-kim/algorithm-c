@@ -1,5 +1,5 @@
-#ifndef _MYDATA_H
-#define _MYDATA_H
+#ifndef MYDATA_H
+#define MYDATA_H
 
 typedef struct {
   int priority;

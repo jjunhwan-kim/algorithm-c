@@ -6,7 +6,7 @@ void initHeap(Heap* heap, int (*compare)(MyData*, MyData*)) {
 }
 
 int pushHeap(Heap* heap, MyData* data) {
-  if (heap->size >= MAX_SIZE) {
+  if (heap->size >= HEAP_SIZE) {
     return 0;
   }
 

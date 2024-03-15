@@ -1,8 +1,8 @@
 #include "mergesort.h"
 
-MyData temp[MAX_SIZE];
+MyData temp[MERGE_SORT_SIZE];
 
-void merge(MyData arr[MAX_SIZE], int (*compare)(MyData*, MyData*),
+void merge(MyData arr[MERGE_SORT_SIZE], int (*compare)(MyData*, MyData*),
            int startIndex, int endIndex);
 
 void mergeSort(MyData* arr, int (*compare)(MyData*, MyData*), int startIndex,
@@ -16,7 +16,7 @@ void mergeSort(MyData* arr, int (*compare)(MyData*, MyData*), int startIndex,
   }
 }
 
-void merge(MyData arr[MAX_SIZE], int (*compare)(MyData*, MyData*),
+void merge(MyData arr[MERGE_SORT_SIZE], int (*compare)(MyData*, MyData*),
            int startIndex, int endIndex) {
   int midIndex = (startIndex + endIndex) / 2;
   int leftIndex = startIndex;

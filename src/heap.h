@@ -1,12 +1,12 @@
-#ifndef _HEAP_H
-#define _HEAP_H
+#ifndef HEAP_H
+#define HEAP_H
 #include "mydata.h"
 
-#define MAX_SIZE 10
+#define HEAP_SIZE 10000
 
 typedef struct {
   int size;
-  MyData* data[MAX_SIZE];
+  MyData* data[HEAP_SIZE];
   int (*compare)(MyData*, MyData*);
 } Heap;
 
